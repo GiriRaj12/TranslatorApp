@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "30064528479",
+    "firebase_url": "https://translater-d5a94.firebaseio.com",
+    "project_id": "translater-d5a94",
+    "storage_bucket": "translater-d5a94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:30064528479:android:344dc2f9b8e196fab55fea",
+        "android_client_info": {
+          "package_name": "com.example.messagingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "30064528479-p9qp2m926m18fmee4mqmin34jih9jjml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZX3qX11207DLkeYjWuPgmihFPTDXR-h4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "30064528479-p9qp2m926m18fmee4mqmin34jih9jjml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
