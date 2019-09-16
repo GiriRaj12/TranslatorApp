@@ -1,9 +1,7 @@
 package com.example.messagingapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -39,9 +37,10 @@ class RegisterActivity : AppCompatActivity(){
         //FireBase Authentication
         println(email+"->"+passwrd)
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,passwrd)
-            .addOnCompleteListener(){
-                if(!it.isSuccessful()) return@addOnCompleteListener
-                Toast.makeText(this@RegisterActivity,"Registered now login",Toast.LENGTH_SHORT).show()
+            .addOnCompleteListener() {
+                if (!it.isSuccessful()) return@addOnCompleteListener
+                Toast.makeText(this@RegisterActivity, "Registered now login", Toast.LENGTH_SHORT)
+                    .show()
             }
     }
 

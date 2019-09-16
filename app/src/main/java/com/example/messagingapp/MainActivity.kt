@@ -3,13 +3,11 @@ package com.example.messagingapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.emailInput
-import kotlinx.android.synthetic.main.activity_register.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,10 +21,9 @@ class MainActivity : AppCompatActivity() {
         registerText.setOnClickListener(){
             registerHandler();
         }
-
     }
 
-    fun checkInput() {
+    private fun checkInput() {
         var email = emailInput.text.toString();
         var password = passwrdInput.text.toString();
         if (email.isBlank() || password.isBlank()) {
@@ -35,9 +32,8 @@ class MainActivity : AppCompatActivity() {
         userLogin(email, password);
     }
 
-    fun registerHandler(){
+    private fun registerHandler(){
         var intent = Intent(this,RegisterActivity::class.java)
-        intent.putExtra("something","somthing")
             startActivity(intent)
     }
 
@@ -45,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {
                 val intent = Intent(this,MainPageActivity::class.java)
+                intent.putExtra("userName",email);
                 startActivity(intent);
             }
             .addOnFailureListener{
