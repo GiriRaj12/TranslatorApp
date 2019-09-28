@@ -29,10 +29,10 @@ class TranslatorPageActivity : AppCompatActivity(){
             .document("/"+userName+ UUID.randomUUID())
             .set(user)
             .addOnSuccessListener {
-                Toast.makeText(this@MainPageActivity,"Saved", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@TranslatorPageActivity,"Saved", Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener(){
-                Toast.makeText(this@MainPageActivity,"Not Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this@TranslatorPageActivity,"Not Saved", Toast.LENGTH_SHORT).show();
             }
     }
 }

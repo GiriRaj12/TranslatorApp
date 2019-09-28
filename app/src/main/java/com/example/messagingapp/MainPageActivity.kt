@@ -1,15 +1,22 @@
 package com.example.messagingapp
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.messagingapp.DataObjects.UserTranslation
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
+import android.support.*;
 import kotlinx.android.synthetic.main.activity_mainpage.*
-import java.util.*
 
 class MainPageActivity : AppCompatActivity(){
+    var translations : ArrayList<String> = ArrayList();
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_mainpage)
+        addTranslations()
+        translationList
+    }
+
+    fun addTranslations(){
+        translations.add("Something")
+        translations.add("Nothing")
+    }
 
 }

@@ -27,21 +27,30 @@ class RegisterActivity : AppCompatActivity(){
         var email = emailInput.text.toString()
         var passwrd = passwordInput.text.toString()
 
-        if(name.isBlank() || email.isBlank() || passwrd.isBlank()) {
+        if(name.isNullOrBlank() || email.isNullOrBlank() || passwrd.isNullOrBlank()) {
             Toast.makeText(
                 this@RegisterActivity,
                 "Input Feilds cannot be empty",
                 Toast.LENGTH_SHORT
             ).show()
         }
-        //FireBase Authentication
-        println(email+"->"+passwrd)
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,passwrd)
-            .addOnCompleteListener() {
-                if (!it.isSuccessful()) return@addOnCompleteListener
-                Toast.makeText(this@RegisterActivity, "Registered now login", Toast.LENGTH_SHORT)
-                    .show()
-            }
+        else{
+            println(email+""+passwrd);
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, passwrd)
+                .addOnCompleteListener() {
+                    if (!it.isSuccessful()) return@addOnCompleteListener
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        "Registered now login",
+                        Toast.LENGTH_SHORT
+                    )
+                        .show()
+                }
+                .addOnFailureListener() {
+                    Toast.makeText(this@RegisterActivity, "Not Registered", Toast.LENGTH_SHORT);
+                }
+        }
+
     }
 
 }
